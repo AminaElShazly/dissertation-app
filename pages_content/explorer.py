@@ -78,7 +78,7 @@ def render() -> None:
     st.markdown(
         f"""
         <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px;
-                    letter-spacing: 0.2em; text-transform: uppercase; color: #7a7a7a;
+                    letter-spacing: 0.2em; text-transform: uppercase; color: #7a6f5f;
                     margin-top: 16px; margin-bottom: 8px;">
           {len(filtered)} of {len(df)} charts shown
         </div>

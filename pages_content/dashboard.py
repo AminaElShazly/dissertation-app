@@ -54,7 +54,7 @@ def render() -> None:
 
     st.markdown(
         f'<div style="font-family: \'JetBrains Mono\', monospace; font-size: 10px; '
-        f'letter-spacing: 0.2em; text-transform: uppercase; color: #7a7a7a; '
+        f'letter-spacing: 0.2em; text-transform: uppercase; color: #7a6f5f; '
         f'margin-top: 16px;">Showing {len(sub)} of {len(df)} charts</div>',
         unsafe_allow_html=True,
     )
@@ -93,8 +93,8 @@ def render() -> None:
     )
     st.markdown(
         f"""
-        <p style="font-family: 'Source Serif 4', serif; font-style: italic; font-size: 15px;
-                  color: #7a7a7a; max-width: 740px; margin-bottom: 24px;">
+        <p style="font-family: 'Fraunces', serif; font-style: italic; font-size: 15px;
+                  color: #7a6f5f; max-width: 740px; margin-bottom: 24px;">
           For each item, what proportion of the {len(sub)} filtered charts did each model pass?
           Higher is better. Differences highlight where one model systematically out- or under-performs.
         </p>
@@ -119,8 +119,8 @@ def render() -> None:
     )
     st.markdown(
         f"""
-        <p style="font-family: 'Source Serif 4', serif; font-style: italic; font-size: 15px;
-                  color: #7a7a7a; max-width: 740px; margin-bottom: 24px;">
+        <p style="font-family: 'Fraunces', serif; font-style: italic; font-size: 15px;
+                  color: #7a6f5f; max-width: 740px; margin-bottom: 24px;">
           For each of the nine error categories, how many of the {len(sub)} filtered charts
           contained the error? Lower is better.
         </p>
@@ -185,19 +185,19 @@ def _build_checklist_chart(gpt: dict, claude: dict, total: int) -> go.Figure:
     fig.add_trace(go.Bar(
         y=labels, x=gpt_pct, name='GPT-4o',
         orientation='h',
-        marker_color='#2e006b',
+        marker_color='#1a1612',
         text=[f'{p:.0f}%' for p in gpt_pct],
         textposition='outside',
-        textfont=dict(family='JetBrains Mono, monospace', size=11, color='#1a1a1a'),
+        textfont=dict(family='JetBrains Mono, monospace', size=11, color='#1a1612'),
         hovertemplate='<b>%{y}</b><br>GPT-4o: %{x:.1f}% pass<extra></extra>',
     ))
     fig.add_trace(go.Bar(
         y=labels, x=claude_pct, name='Claude Sonnet 4.6',
         orientation='h',
-        marker_color='#ffb81c',
+        marker_color='#9c1d6c',
         text=[f'{p:.0f}%' for p in claude_pct],
         textposition='outside',
-        textfont=dict(family='JetBrains Mono, monospace', size=11, color='#1a1a1a'),
+        textfont=dict(family='JetBrains Mono, monospace', size=11, color='#1a1612'),
         hovertemplate='<b>%{y}</b><br>Claude: %{x:.1f}% pass<extra></extra>',
     ))
     fig.update_layout(
@@ -206,15 +206,15 @@ def _build_checklist_chart(gpt: dict, claude: dict, total: int) -> go.Figure:
         plot_bgcolor='white',
         paper_bgcolor='rgba(0,0,0,0)',
         margin=dict(l=50, r=40, t=40, b=40),
-        font=dict(family='Source Sans 3, sans-serif', color='#1a1a1a', size=11),
-        xaxis=dict(title='% of charts passing', range=[0, 110], gridcolor='#f0f0f0', showgrid=True),
+        font=dict(family='Inter Tight, sans-serif', color='#1a1612', size=11),
+        xaxis=dict(title='% of charts passing', range=[0, 110], gridcolor='#e8dfd0', showgrid=True),
         yaxis=dict(title='', autorange='reversed', tickfont=dict(family='JetBrains Mono, monospace', size=10)),
         legend=dict(
             orientation='h', yanchor='bottom', y=1.02, xanchor='left', x=0,
-            font=dict(family='Source Sans 3, sans-serif', size=11),
+            font=dict(family='Inter Tight, sans-serif', size=11),
             bgcolor='rgba(0,0,0,0)',
         ),
-        hoverlabel=dict(bgcolor='#1a1a1a', font=dict(color='#ffffff')),
+        hoverlabel=dict(bgcolor='#1a1612', font=dict(color='#ffffff')),
     )
     return fig
 
@@ -230,19 +230,19 @@ def _build_error_chart(gpt: dict, claude: dict, total: int) -> go.Figure:
     fig.add_trace(go.Bar(
         y=labels, x=gpt_counts, name='GPT-4o',
         orientation='h',
-        marker_color='#2e006b',
+        marker_color='#1a1612',
         text=[f'{c}/{total}' for c in gpt_counts],
         textposition='outside',
-        textfont=dict(family='JetBrains Mono, monospace', size=11, color='#1a1a1a'),
+        textfont=dict(family='JetBrains Mono, monospace', size=11, color='#1a1612'),
         hovertemplate='<b>%{y}</b><br>GPT-4o: %{x} of ' + str(total) + ' charts<extra></extra>',
     ))
     fig.add_trace(go.Bar(
         y=labels, x=claude_counts, name='Claude Sonnet 4.6',
         orientation='h',
-        marker_color='#ffb81c',
+        marker_color='#9c1d6c',
         text=[f'{c}/{total}' for c in claude_counts],
         textposition='outside',
-        textfont=dict(family='JetBrains Mono, monospace', size=11, color='#1a1a1a'),
+        textfont=dict(family='JetBrains Mono, monospace', size=11, color='#1a1612'),
         hovertemplate='<b>%{y}</b><br>Claude: %{x} of ' + str(total) + ' charts<extra></extra>',
     ))
     fig.update_layout(
@@ -251,15 +251,15 @@ def _build_error_chart(gpt: dict, claude: dict, total: int) -> go.Figure:
         plot_bgcolor='white',
         paper_bgcolor='rgba(0,0,0,0)',
         margin=dict(l=50, r=40, t=40, b=40),
-        font=dict(family='Source Sans 3, sans-serif', color='#1a1a1a', size=11),
-        xaxis=dict(title=f'Number of charts (out of {total}) with this error', gridcolor='#f0f0f0', showgrid=True),
+        font=dict(family='Inter Tight, sans-serif', color='#1a1612', size=11),
+        xaxis=dict(title=f'Number of charts (out of {total}) with this error', gridcolor='#e8dfd0', showgrid=True),
         yaxis=dict(title='', autorange='reversed', tickfont=dict(family='JetBrains Mono, monospace', size=10)),
         legend=dict(
             orientation='h', yanchor='bottom', y=1.02, xanchor='left', x=0,
-            font=dict(family='Source Sans 3, sans-serif', size=11),
+            font=dict(family='Inter Tight, sans-serif', size=11),
             bgcolor='rgba(0,0,0,0)',
         ),
-        hoverlabel=dict(bgcolor='#1a1a1a', font=dict(color='#ffffff')),
+        hoverlabel=dict(bgcolor='#1a1612', font=dict(color='#ffffff')),
     )
     return fig
 
@@ -267,7 +267,7 @@ def _build_error_chart(gpt: dict, claude: dict, total: int) -> go.Figure:
 def _build_score_distribution(sub, model: str, label: str) -> go.Figure:
     """Histogram of checklist totals (0-10) for one model."""
     counts = [(sub[f'{model}_total'] == i).sum() for i in range(11)]
-    color = '#2e006b' if model == 'gpt4o' else '#ffb81c'
+    color = '#1a1612' if model == 'gpt4o' else '#9c1d6c'
 
     fig = go.Figure()
     fig.add_trace(go.Bar(
@@ -275,20 +275,20 @@ def _build_score_distribution(sub, model: str, label: str) -> go.Figure:
         marker_color=color,
         text=[str(c) if c > 0 else '' for c in counts],
         textposition='outside',
-        textfont=dict(family='Source Serif 4, serif', size=14, color='#1a1a1a'),
+        textfont=dict(family='Fraunces, serif', size=14, color='#1a1612'),
         hovertemplate=f'<b>{label}</b><br>Score: %{{x}}/10<br>Charts: %{{y}}<extra></extra>',
     ))
     fig.update_layout(
         title=dict(
             text=f'<b>{label}</b> — checklist score distribution',
-            font=dict(family='Source Serif 4, serif', size=16, color='#1a1a1a'),
+            font=dict(family='Fraunces, serif', size=16, color='#1a1612'),
             x=0, xanchor='left',
         ),
         height=320,
         plot_bgcolor='white',
         paper_bgcolor='rgba(0,0,0,0)',
         margin=dict(l=50, r=40, t=60, b=50),
-        font=dict(family='Source Sans 3, sans-serif', color='#1a1a1a'),
+        font=dict(family='Inter Tight, sans-serif', color='#1a1612'),
         xaxis=dict(
             title='Checklist score (0–10)',
             tickmode='linear', tick0=0, dtick=1,
@@ -297,7 +297,7 @@ def _build_score_distribution(sub, model: str, label: str) -> go.Figure:
         ),
         yaxis=dict(
             title='Number of charts',
-            gridcolor='#f0f0f0', showgrid=True,
+            gridcolor='#e8dfd0', showgrid=True,
             range=[0, max(counts) * 1.25 if counts else 1],
         ),
         showlegend=False,

@@ -36,8 +36,8 @@ def render() -> None:
 
     st.markdown(
         """
-        <p style="font-family: 'Source Serif 4', serif; font-style: italic; font-size: 15px;
-                  color: #7a7a7a; margin: 16px 0 32px 0;">
+        <p style="font-family: 'Fraunces', serif; font-style: italic; font-size: 15px;
+                  color: #7a6f5f; margin: 16px 0 32px 0;">
           The single highest-frequency flag — HM2, unsupported inferential content — is the one
           most often missed by reviewers because it reads as expertise rather than error.
         </p>
@@ -58,8 +58,8 @@ def render() -> None:
     st.markdown('<div class="sect-divider"></div>', unsafe_allow_html=True)
     st.markdown('<div class="sectnum">THE NINE FLAGS</div>', unsafe_allow_html=True)
     st.markdown(
-        '<p style="font-family: \'Source Serif 4\', serif; font-style: italic; font-size: 15px; '
-        'color: #7a7a7a; margin-bottom: 24px;">'
+        '<p style="font-family: \'Fraunces\', serif; font-style: italic; font-size: 15px; '
+        'color: #7a6f5f; margin-bottom: 24px;">'
         'Ordered by total frequency across both models. Rates shown are out of 45 charts.</p>',
         unsafe_allow_html=True,
     )
@@ -147,19 +147,19 @@ def _build_frequency_chart(df) -> go.Figure:
     fig.add_trace(go.Bar(
         y=labels, x=gpt, name='GPT-4o',
         orientation='h',
-        marker_color='#2e006b',
+        marker_color='#1a1612',
         text=[f'{c}' for c in gpt],
         textposition='outside',
-        textfont=dict(family='JetBrains Mono, monospace', size=11, color='#1a1a1a'),
+        textfont=dict(family='JetBrains Mono, monospace', size=11, color='#1a1612'),
         hovertemplate='<b>%{y}</b><br>GPT-4o: %{x} of ' + str(total) + ' charts<extra></extra>',
     ))
     fig.add_trace(go.Bar(
         y=labels, x=claude, name='Claude Sonnet 4.6',
         orientation='h',
-        marker_color='#ffb81c',
+        marker_color='#9c1d6c',
         text=[f'{c}' for c in claude],
         textposition='outside',
-        textfont=dict(family='JetBrains Mono, monospace', size=11, color='#1a1a1a'),
+        textfont=dict(family='JetBrains Mono, monospace', size=11, color='#1a1612'),
         hovertemplate='<b>%{y}</b><br>Claude: %{x} of ' + str(total) + ' charts<extra></extra>',
     ))
     fig.update_layout(
@@ -168,17 +168,17 @@ def _build_frequency_chart(df) -> go.Figure:
         plot_bgcolor='white',
         paper_bgcolor='rgba(0,0,0,0)',
         margin=dict(l=50, r=40, t=40, b=40),
-        font=dict(family='Source Sans 3, sans-serif', color='#1a1a1a', size=11),
+        font=dict(family='Inter Tight, sans-serif', color='#1a1612', size=11),
         xaxis=dict(
             title=f'Number of charts (of {total}) where the error appeared',
-            gridcolor='#f0f0f0', showgrid=True, range=[0, total + 5],
+            gridcolor='#e8dfd0', showgrid=True, range=[0, total + 5],
         ),
         yaxis=dict(title='', autorange='reversed', tickfont=dict(family='JetBrains Mono, monospace', size=11)),
         legend=dict(
             orientation='h', yanchor='bottom', y=1.02, xanchor='left', x=0,
-            font=dict(family='Source Sans 3, sans-serif', size=11),
+            font=dict(family='Inter Tight, sans-serif', size=11),
             bgcolor='rgba(0,0,0,0)',
         ),
-        hoverlabel=dict(bgcolor='#1a1a1a', font=dict(color='#ffffff')),
+        hoverlabel=dict(bgcolor='#1a1612', font=dict(color='#ffffff')),
     )
     return fig

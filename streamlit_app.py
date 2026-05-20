@@ -38,13 +38,13 @@ inject_styles()
 with st.sidebar:
     st.markdown(
         """
-        <div style="padding: 16px 0 24px; border-bottom: 1px solid rgba(255,255,255,0.2); margin-bottom: 24px;">
+        <div style="padding: 16px 0 24px; border-bottom: 1px solid rgba(244,237,226,0.2); margin-bottom: 24px;">
           <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.25em;
-                      color: rgba(255,255,255,0.5); margin-bottom: 8px;">EVIDENCE BRIEF</div>
-          <div style="font-family: 'Source Serif 4', serif; font-size: 28px; font-weight: 300;
+                      color: rgba(244,237,226,0.5); margin-bottom: 8px;">EVIDENCE BRIEF</div>
+          <div style="font-family: 'Fraunces', serif; font-size: 28px; font-weight: 300;
                       line-height: 1; letter-spacing: -0.02em;">The Confidence Trap</div>
-          <div style="font-family: 'Source Serif 4', serif; font-style: italic; font-size: 13px;
-                      color: rgba(255,255,255,0.7); margin-top: 12px; line-height: 1.4;">
+          <div style="font-family: 'Fraunces', serif; font-style: italic; font-size: 13px;
+                      color: rgba(244,237,226,0.7); margin-top: 12px; line-height: 1.4;">
             Guidelines for AI-generated healthcare chart explanations
           </div>
         </div>
@@ -53,7 +53,7 @@ with st.sidebar:
     )
 
     st.markdown(
-        '<div style="font-family: \'Source Serif 4\', serif; color: rgba(255,255,255,0.7); '
+        '<div style="font-family: \'Fraunces\', serif; color: rgba(244,237,226,0.7); '
         'font-size: 14px; margin-bottom: 8px;">Navigate to:</div>',
         unsafe_allow_html=True,
     )
@@ -72,11 +72,11 @@ with st.sidebar:
 
     st.markdown(
         """
-        <div style="padding: 32px 0 16px; border-top: 1px solid rgba(255,255,255,0.2); margin-top: 32px;">
+        <div style="padding: 32px 0 16px; border-top: 1px solid rgba(244,237,226,0.2); margin-top: 32px;">
           <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.2em;
-                      color: rgba(255,255,255,0.5); margin-bottom: 8px;">SOURCE</div>
-          <div style="font-family: 'Source Serif 4', serif; font-size: 12px; line-height: 1.5;
-                      color: rgba(255,255,255,0.8);">
+                      color: rgba(244,237,226,0.5); margin-bottom: 8px;">SOURCE</div>
+          <div style="font-family: 'Fraunces', serif; font-size: 12px; line-height: 1.5;
+                      color: rgba(244,237,226,0.8);">
             ElShazly, A. (2026).<br>
             <em>Evaluating LLM-Generated Explanations for Healthcare Data Visualisations.</em><br>
             University of Sheffield, IJC319.<br><br>

@@ -212,25 +212,25 @@ def _comprehension_chart() -> go.Figure:
     fig.add_trace(go.Bar(
         x=["Chart only", "Chart + AI explanation"],
         y=[11.0, 7.0],
-        marker_color=["#2e006b", "#ffb81c"],
+        marker_color=["#1a1612", "#9c1d6c"],
         text=["11.0", "7.0"],
         textposition="outside",
-        textfont=dict(family="Source Serif 4, serif", size=20, color="#1a1a1a"),
+        textfont=dict(family="Fraunces, serif", size=20, color="#1a1612"),
         hovertemplate="<b>%{x}</b><br>Median: %{y}<extra></extra>",
     ))
     fig.update_layout(
         title=dict(
             text='Median comprehension score (max 36)',
-            font=dict(family='Source Serif 4, serif', size=15, color='#1a1a1a'),
+            font=dict(family='Fraunces, serif', size=15, color='#1a1612'),
             x=0, xanchor='left',
         ),
         height=320,
         plot_bgcolor="white",
         paper_bgcolor="rgba(0,0,0,0)",
         margin=dict(l=60, r=40, t=60, b=50),
-        font=dict(family="Source Sans 3, sans-serif", color="#1a1a1a"),
+        font=dict(family="Inter Tight, sans-serif", color="#1a1612"),
         xaxis=dict(showgrid=False, tickfont=dict(family="JetBrains Mono, monospace", size=11, color="#7a7a7a")),
-        yaxis=dict(showgrid=True, gridcolor="#f0f0f0", range=[0, 14]),
+        yaxis=dict(showgrid=True, gridcolor="#e8dfd0", range=[0, 14]),
         showlegend=False,
         bargap=0.5,
     )
@@ -243,25 +243,25 @@ def _confidence_chart() -> go.Figure:
     fig.add_trace(go.Bar(
         x=["Chart only", "Chart + AI explanation"],
         y=[20.8, 51.7],
-        marker_color=["#2e006b", "#ffb81c"],
+        marker_color=["#1a1612", "#9c1d6c"],
         text=["20.8%", "51.7%"],
         textposition="outside",
-        textfont=dict(family="Source Serif 4, serif", size=20, color="#1a1a1a"),
+        textfont=dict(family="Fraunces, serif", size=20, color="#1a1612"),
         hovertemplate="<b>%{x}</b><br>%{y}% high-confidence errors<extra></extra>",
     ))
     fig.update_layout(
         title=dict(
             text='High-confidence errors (% of answers)',
-            font=dict(family='Source Serif 4, serif', size=15, color='#1a1a1a'),
+            font=dict(family='Fraunces, serif', size=15, color='#1a1612'),
             x=0, xanchor='left',
         ),
         height=320,
         plot_bgcolor="white",
         paper_bgcolor="rgba(0,0,0,0)",
         margin=dict(l=60, r=40, t=60, b=50),
-        font=dict(family="Source Sans 3, sans-serif", color="#1a1a1a"),
+        font=dict(family="Inter Tight, sans-serif", color="#1a1612"),
         xaxis=dict(showgrid=False, tickfont=dict(family="JetBrains Mono, monospace", size=11, color="#7a7a7a")),
-        yaxis=dict(showgrid=True, gridcolor="#f0f0f0", range=[0, 65]),
+        yaxis=dict(showgrid=True, gridcolor="#e8dfd0", range=[0, 65]),
         showlegend=False,
         bargap=0.5,
     )

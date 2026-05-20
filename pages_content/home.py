@@ -60,10 +60,10 @@ def render() -> None:
             st.markdown(
                 f"""
                 <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px;
-                            letter-spacing: 0.2em; text-transform: uppercase; color: #7a7a7a;
+                            letter-spacing: 0.2em; text-transform: uppercase; color: #7a6f5f;
                             margin-bottom: 6px;">{label}</div>
-                <div style="font-family: 'Source Serif 4', serif; font-size: 15px; font-weight: 500;
-                            line-height: 1.4; color: #1a1a1a;">{value}</div>
+                <div style="font-family: 'Fraunces', serif; font-size: 15px; font-weight: 500;
+                            line-height: 1.4; color: #1a1612;">{value}</div>
                 """,
                 unsafe_allow_html=True,
             )
