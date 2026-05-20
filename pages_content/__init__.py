@@ -1,4 +1,4 @@
-git add ."""Page modules. Each exposes a `render()` function."""
+"""Page modules. Each exposes a `render()` function."""
 
 from . import home, explorer, dashboard, findings, pitfalls
 
