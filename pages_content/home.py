@@ -16,7 +16,7 @@ def render() -> None:
     st.markdown(
         """
         <h1 class="hero-title">
-          AI explanations made readers <em>more confident</em><br>
+          AI explanations made readers <em>more falsely confident</em><br>
           and <span class="strike">more correct</span> <em>less correct.</em>
         </h1>
         """,

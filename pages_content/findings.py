@@ -13,8 +13,8 @@ _COMMUNICATOR_RULES = [
      "The most frequent failure mode (HM2) was the introduction of causal mechanisms absent from the data — \"driven by modern medicine,\" \"due to lifestyle factors.\" These are the hardest errors to catch because they sound knowledgeable."),
     ("03", "Pair explanations with a comprehension prompt, not just a \"read more\" link.",
      "A short, specific question (\"which group changed most?\") forces re-engagement with the chart and disrupts the substitution effect. Passive disclaimers do not."),
-    ("04", "Do not assume your expert audiences are protected.",
-     "Visualisation experience showed <strong>zero protective effect</strong> (ρ = −0.005). The \"we're only sending this to clinicians\" defence is empirically unsupported."),
+    ("04", "Do not assume your more frequent users are protected.",
+     "Visualisation experience showed <strong>zero protective effect</strong> (ρ = −0.005). The \"we're only sending this to engaging users\" defence is empirically unsupported."),
     ("05", "Increase scrutiny as chart complexity rises.",
      "Both models degraded monotonically with complexity (ρ ≈ −0.65). Information density is the primary driver of accuracy loss — not chart type. Multi-series, multi-axis, or annotated charts need the most review."),
 ]
