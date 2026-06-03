@@ -466,7 +466,7 @@ _CSS = """
 
   /* ============ TABS ============ */
   .stTabs [data-baseweb="tab-list"] {
-    gap: 0;
+    gap: 4px;
     border-bottom: 1px solid #c9bfae;
   }
   .stTabs [data-baseweb="tab"] {
@@ -478,10 +478,36 @@ _CSS = """
     background: transparent !important;
     border-radius: 0 !important;
     color: #7a6f5f !important;
+    border-bottom: 3px solid transparent !important;
+    transition: all 0.15s ease;
+  }
+  .stTabs [data-baseweb="tab"]:hover {
+    color: #1a1612 !important;
+    background: rgba(156, 29, 108, 0.05) !important;
   }
   .stTabs [aria-selected="true"] {
-    background: #1a1612 !important;
-    color: #f4ede2 !important;
+    background: transparent !important;
+    color: #9c1d6c !important;
+    border-bottom: 3px solid #9c1d6c !important;
+    font-weight: 700 !important;
+  }
+  /* Force text inside the active tab to inherit the right colour
+     (Streamlit nests the label in a <p> that ignores parent colour) */
+  .stTabs [aria-selected="true"] p,
+  .stTabs [aria-selected="true"] div,
+  .stTabs [aria-selected="true"] span {
+    color: #9c1d6c !important;
+    font-weight: 700 !important;
+  }
+  .stTabs [data-baseweb="tab"] p,
+  .stTabs [data-baseweb="tab"] div,
+  .stTabs [data-baseweb="tab"] span {
+    color: inherit !important;
+  }
+  /* Hide the default Streamlit tab underline indicator (the black bar) */
+  .stTabs [data-baseweb="tab-highlight"],
+  .stTabs [data-baseweb="tab-border"] {
+    display: none !important;
   }
 
   /* ============ FORM ELEMENTS ============ */
