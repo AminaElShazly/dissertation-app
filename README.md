@@ -6,6 +6,7 @@ Companion digital artefact to the BSc dissertation
 *Evaluating LLM-Generated Explanations for Healthcare Data Visualisations*
 by Amina ElShazly · University of Sheffield · IJC319 · May 2026.
 
+**[Read the dissertation (PDF)](IJC319_Dissertation_Public.pdf)**
 ---
 
 ## What this is
